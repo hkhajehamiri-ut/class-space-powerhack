@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink as RouterNavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink as RouterNavLink } from "react-router-dom";
 import {
   Collapse,
   Container,
@@ -12,22 +12,30 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
-import '@fortawesome/fontawesome-free/css/all.css';
+  DropdownItem
+} from "reactstrap";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 function UserAvatar(props) {
   // If a user avatar is available, return an img tag with the pic
   if (props.user.avatar) {
-    return <img
-            src={props.user.avatar} alt="user"
-            className="rounded-circle align-self-center mr-2"
-            style={{width: '32px'}}></img>;
+    return (
+      <img
+        src={props.user.avatar}
+        alt="user"
+        className="rounded-circle align-self-center mr-2"
+        style={{ width: "32px" }}
+      ></img>
+    );
   }
 
   // No avatar available, return a default icon
-  return <i
-          className="far fa-user-circle fa-lg rounded-circle align-self-center mr-2"
-          style={{width: '32px'}}></i>;
+  return (
+    <i
+      className="far fa-user-circle fa-lg rounded-circle align-self-center mr-2"
+      style={{ width: "32px" }}
+    ></i>
+  );
 }
 
 function AuthNavItem(props) {
@@ -37,16 +45,17 @@ function AuthNavItem(props) {
     return (
       <UncontrolledDropdown>
         <DropdownToggle nav caret>
-          <UserAvatar user={props.user}/>
+          <UserAvatar user={props.user} />
         </DropdownToggle>
         <DropdownMenu right>
           <h5 className="dropdown-item-text mb-0">{props.user.displayName}</h5>
-          <p className="dropdown-item-text text-muted mb-0">{props.user.email}</p>
+          <p className="dropdown-item-text text-muted mb-0">
+            {props.user.email}
+          </p>
           <DropdownItem divider />
           <DropdownItem onClick={props.authButtonMethod}>Sign Out</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
-
     );
   }
 
@@ -80,35 +89,48 @@ export default class NavBar extends React.Component {
     if (this.props.isAuthenticated) {
       calendarLink = (
         <NavItem>
-          <RouterNavLink to="/calendar" className="nav-link" exact>Calendar</RouterNavLink>
+          <RouterNavLink to="/calendar" className="nav-link" exact>
+            Calendar
+          </RouterNavLink>
         </NavItem>
       );
     }
 
     return (
       <div>
-        <Navbar style={{backgroundColor: '#ff8f00'}} expand="md" fixed="top" >
+        <Navbar style={{ backgroundColor: "#ff8f00" }} expand="md" fixed="top">
           <Container>
-            <NavbarBrand href="/" className="text-white">Class Space</NavbarBrand>
+            <NavbarBrand href="/" className="text-white">
+              Class Space
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <RouterNavLink to="/" className="nav-link" exact>Home</RouterNavLink>
+                  <RouterNavLink to="/" className="nav-link text-white" exact>
+                    Home
+                  </RouterNavLink>
                 </NavItem>
+                <NavItem>
                 {calendarLink}
+                </NavItem>
               </Nav>
               <Nav className="justify-content-end" navbar>
                 <NavItem>
-                  <NavLink href="https://developer.microsoft.com/graph/docs/concepts/overview" target="_blank">
-                    <i className="fas fa-external-link-alt mr-1"></i>
+                  <NavLink
+                    href="https://developer.microsoft.com/graph/docs/concepts/overview"
+                    target="_blank"
+                    className="text-white"
+                  >
+                    <i className="fas fa-external-link-alt mr-1 text-white"></i>
                     Docs
                   </NavLink>
                 </NavItem>
                 <AuthNavItem
                   isAuthenticated={this.props.isAuthenticated}
                   authButtonMethod={this.props.authButtonMethod}
-                  user={this.props.user} />
+                  user={this.props.user}
+                />
               </Nav>
             </Collapse>
           </Container>

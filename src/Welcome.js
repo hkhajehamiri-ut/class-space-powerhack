@@ -13,7 +13,6 @@ function WelcomeContent(props) {
       </div>
     );
   }
-
   // Not authenticated, present a sign in button
   return <Button color="primary" onClick={props.authButtonMethod}>Click here to sign in</Button>;
 }
