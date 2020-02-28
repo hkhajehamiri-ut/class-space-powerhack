@@ -89,7 +89,7 @@ export default class NavBar extends React.Component {
     if (this.props.isAuthenticated) {
       calendarLink = (
         <NavItem>
-          <RouterNavLink to="/calendar" className="nav-link" exact>
+          <RouterNavLink to="/calendar" className="nav-link text-white" exact>
             Calendar
           </RouterNavLink>
         </NavItem>
@@ -111,9 +111,7 @@ export default class NavBar extends React.Component {
                     Home
                   </RouterNavLink>
                 </NavItem>
-                <NavItem>
                 {calendarLink}
-                </NavItem>
               </Nav>
               <Nav className="justify-content-end" navbar>
                 <NavItem>
