@@ -44,7 +44,7 @@ function AuthNavItem(props) {
   if (props.isAuthenticated) {
     return (
       <UncontrolledDropdown>
-        <DropdownToggle nav caret>
+        <DropdownToggle nav caret className='text-white'>
           <UserAvatar user={props.user} />
         </DropdownToggle>
         <DropdownMenu right>
@@ -98,7 +98,7 @@ export default class NavBar extends React.Component {
 
     return (
       <div>
-        <Navbar style={{ backgroundColor: "#ff8f00" }} expand="md" fixed="top">
+        <Navbar style={{ backgroundColor: "#a85db5" }} expand="md" fixed="top">
           <Container>
             <NavbarBrand href="/" className="text-white">
               Class Space
