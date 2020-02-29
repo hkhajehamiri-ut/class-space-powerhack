@@ -9,6 +9,7 @@ import config from './Config';
 import { getUserDetails } from './GraphService';
 import 'bootstrap/dist/css/bootstrap.css';
 import Calendar from './Calendar';
+import SideBar from './components/SideBar';
 
 class App extends Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class App extends Component {
                   showError={this.setErrorMessage.bind(this)} />
               } />
           </Container>
+          <SideBar />
         </div>
       </Router>
     );
