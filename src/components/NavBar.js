@@ -89,7 +89,7 @@ export default class NavBar extends React.Component {
     if (this.props.isAuthenticated) {
       calendarLink = (
         <NavItem>
-          <RouterNavLink to="/calendar" className="nav-link text-white" exact>
+          <RouterNavLink to="/calendar" className="nav-link text-white" exact style={{ fontFamily: 'Source Sans Pro'}}>
             Calendar
           </RouterNavLink>
         </NavItem>
@@ -107,7 +107,7 @@ export default class NavBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <RouterNavLink to="/" className="nav-link text-white" exact>
+                  <RouterNavLink to="/" className="nav-link text-white" exact style={{ fontFamily: 'Source Sans Pro'}}>
                     Home
                   </RouterNavLink>
                 </NavItem>
@@ -119,8 +119,9 @@ export default class NavBar extends React.Component {
                     href="https://developer.microsoft.com/graph/docs/concepts/overview"
                     target="_blank"
                     className="text-white"
+                    style={{ fontFamily: 'Source Sans Pro'}}
                   >
-                    <i className="fas fa-external-link-alt mr-1 text-white"></i>
+                    <i className="fas fa-external-link-alt mr-1 text-white" ></i>
                     Docs
                   </NavLink>
                 </NavItem>
