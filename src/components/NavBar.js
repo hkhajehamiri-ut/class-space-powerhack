@@ -15,6 +15,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import "@fortawesome/fontawesome-free/css/all.css";
+import { Typography } from "@material-ui/core";
 
 function UserAvatar(props) {
   // If a user avatar is available, return an img tag with the pic
@@ -101,7 +102,9 @@ export default class NavBar extends React.Component {
         <Navbar style={{ backgroundColor: "#a85db5" }} expand="md" fixed="top">
           <Container>
             <NavbarBrand href="/" className="text-white" style={{ fontFamily: 'Pacifico'}}>
+              <Typography noWrap style={{ fontFamily: 'Pacifico' }}>
               Class Space
+              </Typography>
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>

@@ -9,8 +9,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import { FaBookOpen } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
+import { FaBookOpen, FaQuestionCircle, FaUsers, FaUserEdit } from "react-icons/fa";
 import { Typography } from "@material-ui/core";
 
 const drawerWidth = 240;
@@ -69,6 +68,28 @@ export default function ClippedDrawer() {
             <ListItemText>
             <Typography style={{fontFamily: 'Source Sans Pro'}}>
             My Students
+            </Typography>
+            </ListItemText>
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+          <FaUserEdit />
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro'}}>
+            Assignments
+            </Typography>
+            </ListItemText>
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+          <FaQuestionCircle />
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro'}}>
+            Assignments
             </Typography>
             </ListItemText>
           </ListItem>
