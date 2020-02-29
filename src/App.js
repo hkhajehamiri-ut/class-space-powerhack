@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { Container, Button } from 'reactstrap';
 import { UserAgentApplication } from 'msal';
 import NavBar from './components/NavBar';
 import ErrorMessage from './ErrorMessage';
-import Welcome from './Welcome';
+import Messages from '../src/components/Messages';
 import config from './Config';
 import { getUserDetails } from './GraphService';
 import 'bootstrap/dist/css/bootstrap.css';
 import Calendar from './Calendar';
 import SideBar from './components/SideBar';
+import Welcome from './Welcome';
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +49,8 @@ class App extends Component {
       error = <ErrorMessage message={this.state.error.message} debug={this.state.error.debug} />;
     }
 
-    return (
+    if(this.state.isAuthenticated) {
+      return (
       <Router>
         <div>
           <NavBar
@@ -64,6 +66,14 @@ class App extends Component {
                   user={this.state.user}
                   authButtonMethod={this.login.bind(this)} />
               } />
+
+            <Route exact path="/"
+            render={(props) =>
+            <Messages {...props}
+            isAuthenticated={this.state.isAuthenticated}
+            user={this.state.user}
+            authButtonMethod={this.login.bind(this)} />
+            }/>
             <Route exact path="/calendar"
               render={(props) =>
                 <Calendar {...props}
@@ -73,7 +83,10 @@ class App extends Component {
           <SideBar />
         </div>
       </Router>
-    );
+     )};
+
+      return <Button color="primary" onClick={this.login.bind(this)}>Click here to sign in</Button>;
+
   }
 
   setErrorMessage(message, debug) {
