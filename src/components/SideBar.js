@@ -16,17 +16,18 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
+    display: "flex",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    background: '#ede7f6'
   },
   content: {
     flexGrow: 1,
@@ -52,10 +53,10 @@ export default function ClippedDrawer() {
         <List style={{fontFamily: 'Source Sans Pro'}} >
           <ListItem button>
             <ListItemIcon>
-          <FaBookOpen />
+          <FaBookOpen size={35}/>
             </ListItemIcon>
             <ListItemText >
-              <Typography style={{fontFamily: 'Source Sans Pro'}}>
+              <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
             My Lessons
               </Typography>
             </ListItemText>
@@ -63,10 +64,10 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <FaUsers />
+          <FaUsers size={35}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
             My Students
             </Typography>
             </ListItemText>
@@ -74,10 +75,10 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <FaUserEdit />
+          <FaUserEdit size={35}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
             Assignments
             </Typography>
             </ListItemText>
@@ -85,11 +86,11 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <FaQuestionCircle />
+          <FaQuestionCircle size={35}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro'}}>
-            Assignments
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
+            Quizzes
             </Typography>
             </ListItemText>
           </ListItem>
