@@ -6,9 +6,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { FaBookOpen, FaQuestionCircle, FaUsers, FaUserEdit, FaComment } from "react-icons/fa";
+import { FaBookOpen, FaQuestionCircle, FaUsers, FaUserEdit, FaComment, FaGamepad, FaCalendarAlt } from "react-icons/fa";
 import { Typography } from "@material-ui/core";
 import PollIcon from "@material-ui/icons/Poll";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -49,6 +50,7 @@ export default function ClippedDrawer() {
       >
         <div className={classes.toolbar} />
         <List style={{fontFamily: 'Source Sans Pro'}} >
+          <RouterNavLink to="/lessons" exact>
           <ListItem button>
             <ListItemIcon>
           <FaBookOpen size={37}/>
@@ -59,56 +61,100 @@ export default function ClippedDrawer() {
               </Typography>
             </ListItemText>
           </ListItem>
+          </RouterNavLink>
 
+          <RouterNavLink to="/students" exact>
           <ListItem button>
             <ListItemIcon>
           <FaUsers size={37}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
             My Students
             </Typography>
             </ListItemText>
           </ListItem>
+          </RouterNavLink>
 
+          <RouterNavLink to="/assignments" exact>
           <ListItem button>
             <ListItemIcon>
           <FaUserEdit size={37}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
             Assignments
             </Typography>
             </ListItemText>
           </ListItem>
+          </RouterNavLink>
 
+          <RouterNavLink to="/quiz" exact>
           <ListItem button>
             <ListItemIcon>
           <FaQuestionCircle size={37}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
             Quizzes
             </Typography>
             </ListItemText>
           </ListItem>
+          </RouterNavLink>
 
           <ListItem button>
             <ListItemIcon>
-          <PollIcon style={{ fontSize: 42 }} color={'#a85db5'} className={classes.poll}/>
+          <PollIcon style={{ fontSize: 42 }} className={classes.poll}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
             Polls
             </Typography>
             </ListItemText>
           </ListItem>
+
+          <RouterNavLink to="/games" exact>
+          <ListItem button>
+            <ListItemIcon>
+          <FaGamepad style={{ fontSize: 42 }} className={classes.poll}/>
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
+            Games
+            </Typography>
+            </ListItemText>
+          </ListItem>
+          </RouterNavLink>
+
+          <ListItem button>
+            <ListItemIcon>
+          <FaCalendarAlt style={{ fontSize: 42 }} className={classes.poll}/>
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
+            Events
+            </Typography>
+            </ListItemText>
+          </ListItem>
+
+          <RouterNavLink to="/events" exact>
+          <ListItem button>
+            <ListItemIcon>
+          <FaComment style={{ fontSize: 42 }} className={classes.poll}/>
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
+            Chat
+            </Typography>
+            </ListItemText>
+          </ListItem>
+          </RouterNavLink>
+
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
       </main>
-      <FaComment style={{marginTop: 140, marginRight: 30, color: '#a85db5'}} size={70} className='fa-flip-horizontal'/>
     </div>
   );
 }

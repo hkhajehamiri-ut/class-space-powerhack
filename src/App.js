@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { Container, Button } from 'reactstrap';
 import { UserAgentApplication } from 'msal';
 import NavBar from './components/NavBar';
@@ -11,6 +12,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Calendar from './Calendar';
 import SideBar from './components/SideBar';
 import Welcome from './Welcome';
+import Lessons from '../src/components/Lessons';
+import Students from '../src/components/Students';
+import Assignments from '../src/components/Assignments';
+import Games from '../src/components/Games';
+import Quiz from '../src/components/Quiz';
 
 class App extends Component {
   constructor(props) {
@@ -50,8 +56,10 @@ class App extends Component {
     }
 
     if(this.state.isAuthenticated) {
+      console.log(this.state.user);
       return (
       <Router>
+        <Switch>
         <div>
           <NavBar
             isAuthenticated={this.state.isAuthenticated}
@@ -79,9 +87,40 @@ class App extends Component {
                 <Calendar {...props}
                   showError={this.setErrorMessage.bind(this)} />
               } />
+            <Route exact path="/lessons"
+              render={(props) =>
+                <Lessons
+                  showError={this.setErrorMessage.bind(this)} />
+              } />
+            <Route exact path="/students"
+              render={(props) =>
+                <Students
+                  showError={this.setErrorMessage.bind(this)} />
+              } />
+            <Route exact path="/assignments"
+          render={(props) =>
+            <Assignments
+              showError={this.setErrorMessage.bind(this)} />
+             } />
+            <Route exact path="/games"
+          render={(props) =>
+            <Games
+              showError={this.setErrorMessage.bind(this)} />
+             } />
+             <Route exact path="/quiz"
+          render={(props) =>
+            <Quiz
+              showError={this.setErrorMessage.bind(this)} />
+             } />
+            <Route exact path="/events"
+              render={(props) =>
+                <Calendar {...props}
+                  showError={this.setErrorMessage.bind(this)} />
+            } />
           </Container>
           <SideBar />
         </div>
+        </Switch>
       </Router>
      )};
 

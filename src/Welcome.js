@@ -4,8 +4,8 @@ function WelcomeContent(props) {
   // If authenticated, greet the user
     return (
       <div>
-        <h10>Hi {props.user.displayName}! Welcome Back Class Space!</h10>
-        <p>Use the navigation bar on the side to access the tools</p>
+        {/* <h10>Hi {props.user.displayName}! Welcome Back Class Space!</h10>
+        <p>Use the navigation bar on the side to access the tools</p> */}
       </div>
     );
   }

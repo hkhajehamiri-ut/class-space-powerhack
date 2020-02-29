@@ -31,3 +31,14 @@ export async function getEvents(accessToken) {
 
   return events;
 }
+
+// export async function getMembers(accessToken) {
+//   const client = getAuthenticatedClient(accessToken);
+
+//   const members = await client
+//   .api('/groups/E1xLIf3DoEisbawFwvYZEg')
+//   .get();
+
+//   console.log(members);
+//   return members;
+// }

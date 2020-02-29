@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'reactstrap';
 import moment from 'moment';
 import config from './Config';
-import { getEvents } from './GraphService';
+import { getEvents, getMembers } from './GraphService';
 
 function formatDateTime(dateTime) {
   return moment.utc(dateTime).local().format('M/D/YY h:mm A');
@@ -25,7 +25,10 @@ export default class Calendar extends React.Component {
       });
       // Get the user's events
       var events = await getEvents(accessToken);
+      // var members = await getMembers(accessToken);
       // Update the array of events in state
+      console.log(events)
+      // console.log(members);
       this.setState({events: events.value});
     }
     catch(err) {
@@ -34,6 +37,7 @@ export default class Calendar extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <h1>Calendar</h1>
