@@ -32,10 +32,12 @@ function UserAvatar(props) {
 
   // No avatar available, return a default icon
   return (
+    <span>
     <i
       className="far fa-user-circle fa-2x rounded-circle align-self-center mr-2"
       style={{ width: "32px" }}
     ></i>
+    </span>
   );
 }
 
@@ -127,12 +129,20 @@ export default class NavBar extends React.Component {
                     <i className="fas fa-external-link-alt mr-1 text-white" ></i>
                     Docs
                   </NavLink>
+                {/* <p className="dropdown-item-text mb-0"></p> */}
+                </NavItem>
+                <NavItem
+                className='text-white'
+                style={{ fontFamily: 'Source Sans Pro', fontSize: '1.2rem', marginTop: '0.5rem', marginLeft: '0.5rem'}}
+                >
+                {this.props.user.displayName}
                 </NavItem>
                 <AuthNavItem
                   isAuthenticated={this.props.isAuthenticated}
                   authButtonMethod={this.props.authButtonMethod}
                   user={this.props.user}
                 />
+
               </Nav>
             </Collapse>
           </Container>
