@@ -100,7 +100,7 @@ export default class NavBar extends React.Component {
       <div>
         <Navbar style={{ backgroundColor: "#a85db5" }} expand="md" fixed="top">
           <Container>
-            <NavbarBrand href="/" className="text-white">
+            <NavbarBrand href="/" className="text-white" style={{ fontFamily: 'Pacifico'}}>
               Class Space
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
