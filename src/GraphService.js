@@ -28,17 +28,17 @@ export async function getEvents(accessToken) {
     .select('subject,organizer,start,end')
     .orderby('createdDateTime DESC')
     .get();
-
+  // console.log(events)
   return events;
 }
 
-// export async function getMembers(accessToken) {
-//   const client = getAuthenticatedClient(accessToken);
+export async function getMembers(accessToken) {
+  const client = getAuthenticatedClient(accessToken);
 
-//   const members = await client
-//   .api('/groups/E1xLIf3DoEisbawFwvYZEg')
-//   .get();
+  const members = await client
+  .api('/groups')
+  .get();
 
-//   console.log(members);
-//   return members;
-// }
+  // console.log(members);
+  return members;
+}

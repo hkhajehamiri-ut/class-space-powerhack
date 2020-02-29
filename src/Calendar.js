@@ -25,9 +25,9 @@ export default class Calendar extends React.Component {
       });
       // Get the user's events
       var events = await getEvents(accessToken);
-      // var members = await getMembers(accessToken);
+      var members = await getMembers(accessToken);
       // Update the array of events in state
-      console.log(events)
+      // console.log(events)
       // console.log(members);
       this.setState({events: events.value});
     }
