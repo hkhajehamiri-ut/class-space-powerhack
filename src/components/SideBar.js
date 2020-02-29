@@ -9,6 +9,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import { FaBookOpen } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
+import { Typography } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -47,36 +50,28 @@ export default function ClippedDrawer() {
         }}
       >
         <div className={classes.toolbar} />
-        {/* <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
-        <List>
+        <List style={{fontFamily: 'Source Sans Pro'}} >
           <ListItem button>
             <ListItemIcon>
-
+          <FaBookOpen />
             </ListItemIcon>
-            <ListItemText>
+            <ListItemText >
+              <Typography style={{fontFamily: 'Source Sans Pro'}}>
             My Lessons
+              </Typography>
             </ListItemText>
           </ListItem>
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+
+          <ListItem button>
+            <ListItemIcon>
+          <FaUsers />
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro'}}>
+            My Students
+            </Typography>
+            </ListItemText>
+          </ListItem>
         </List>
       </Drawer>
       <main className={classes.content}>
