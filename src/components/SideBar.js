@@ -3,14 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import { FaBookOpen, FaQuestionCircle, FaUsers, FaUserEdit } from "react-icons/fa";
 import { Typography } from "@material-ui/core";
+import PollIcon from "@material-ui/icons/Poll";
+
 
 const drawerWidth = 240;
 
@@ -53,10 +52,10 @@ export default function ClippedDrawer() {
         <List style={{fontFamily: 'Source Sans Pro'}} >
           <ListItem button>
             <ListItemIcon>
-          <FaBookOpen size={35}/>
+          <FaBookOpen size={37}/>
             </ListItemIcon>
             <ListItemText >
-              <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
+              <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem', color: 'black'}}>
             My Lessons
               </Typography>
             </ListItemText>
@@ -64,10 +63,10 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <FaUsers size={35}/>
+          <FaUsers size={37}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
             My Students
             </Typography>
             </ListItemText>
@@ -75,10 +74,10 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <FaUserEdit size={35}/>
+          <FaUserEdit size={37}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
             Assignments
             </Typography>
             </ListItemText>
@@ -86,11 +85,22 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <FaQuestionCircle size={35}/>
+          <FaQuestionCircle size={37}/>
             </ListItemIcon>
             <ListItemText>
-            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1rem'}}>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
             Quizzes
+            </Typography>
+            </ListItemText>
+          </ListItem>
+
+          <ListItem button>
+            <ListItemIcon>
+          <PollIcon style={{ fontSize: 42 }} />
+            </ListItemIcon>
+            <ListItemText>
+            <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
+            Polls
             </Typography>
             </ListItemText>
           </ListItem>

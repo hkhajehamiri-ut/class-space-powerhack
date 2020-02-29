@@ -33,7 +33,7 @@ function UserAvatar(props) {
   // No avatar available, return a default icon
   return (
     <i
-      className="far fa-user-circle fa-lg rounded-circle align-self-center mr-2"
+      className="far fa-user-circle fa-2x rounded-circle align-self-center mr-2"
       style={{ width: "32px" }}
     ></i>
   );
@@ -90,7 +90,7 @@ export default class NavBar extends React.Component {
     if (this.props.isAuthenticated) {
       calendarLink = (
         <NavItem>
-          <RouterNavLink to="/calendar" className="nav-link text-white" exact style={{ fontFamily: 'Source Sans Pro'}}>
+          <RouterNavLink to="/calendar" className="nav-link text-white" exact style={{ fontFamily: 'Source Sans Pro', fontSize: '1.2rem'}}>
             Calendar
           </RouterNavLink>
         </NavItem>
@@ -102,7 +102,7 @@ export default class NavBar extends React.Component {
         <Navbar style={{ backgroundColor: "#a85db5" }} expand="md" fixed="top">
           <Container>
             <NavbarBrand href="/" className="text-white" style={{ fontFamily: 'Pacifico'}}>
-              <Typography noWrap style={{ fontFamily: 'Pacifico'}}>
+              <Typography noWrap style={{ fontFamily: 'Pacifico', fontSize: '1.3rem'}}>
               Class Space
               </Typography>
             </NavbarBrand>
@@ -110,7 +110,7 @@ export default class NavBar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <RouterNavLink to="/" className="nav-link text-white" exact style={{ fontFamily: 'Source Sans Pro'}}>
+                  <RouterNavLink to="/" className="nav-link text-white" exact style={{ fontFamily: 'Source Sans Pro', fontSize: '1.2rem'}}>
                     Home
                   </RouterNavLink>
                 </NavItem>
@@ -122,7 +122,7 @@ export default class NavBar extends React.Component {
                     href="https://developer.microsoft.com/graph/docs/concepts/overview"
                     target="_blank"
                     className="text-white"
-                    style={{ fontFamily: 'Source Sans Pro'}}
+                    style={{ fontFamily: 'Source Sans Pro', fontSize: '1.2rem'}}
                   >
                     <i className="fas fa-external-link-alt mr-1 text-white" ></i>
                     Docs
