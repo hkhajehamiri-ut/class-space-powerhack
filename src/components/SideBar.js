@@ -6,10 +6,9 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { FaBookOpen, FaQuestionCircle, FaUsers, FaUserEdit } from "react-icons/fa";
+import { FaBookOpen, FaQuestionCircle, FaUsers, FaUserEdit, FaComment } from "react-icons/fa";
 import { Typography } from "@material-ui/core";
 import PollIcon from "@material-ui/icons/Poll";
-
 
 const drawerWidth = 240;
 
@@ -32,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     padding: theme.spacing(3)
   },
-  toolbar: theme.mixins.toolbar
+  toolbar: theme.mixins.toolbar,
 }));
 
 export default function ClippedDrawer() {
@@ -96,7 +95,7 @@ export default function ClippedDrawer() {
 
           <ListItem button>
             <ListItemIcon>
-          <PollIcon style={{ fontSize: 42 }} />
+          <PollIcon style={{ fontSize: 42 }} color={'#a85db5'} className={classes.poll}/>
             </ListItemIcon>
             <ListItemText>
             <Typography style={{fontFamily: 'Source Sans Pro', fontSize: '1.1rem'}}>
@@ -109,6 +108,7 @@ export default function ClippedDrawer() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
       </main>
+      <FaComment style={{marginTop: 140, marginRight: 30, color: '#a85db5'}} size={70} className='fa-flip-horizontal'/>
     </div>
   );
 }
