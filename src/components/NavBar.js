@@ -101,7 +101,7 @@ export default class NavBar extends React.Component {
 
     return (
       <div>
-        <Navbar style={{ backgroundColor: "#a85db5" }} expand="md" fixed="top">
+        <Navbar style={{ backgroundColor: "#6a1b9a" }} expand="md" fixed="top">
           <Container>
             <NavbarBrand href="/" className="text-white" style={{ fontFamily: 'Pacifico'}}>
               <Typography noWrap style={{ fontFamily: 'Pacifico', fontSize: '1.3rem'}}>

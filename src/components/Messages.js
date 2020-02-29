@@ -7,9 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 
 let notes = [
-  {studentName: 'Melinda', message: "I will need help with today's assignment. Can I drop by after class?"},
-  {studentName: 'James', message: "Couldn't understand question 2 of quiz. Need a hint"},
-  {studentName: 'Sarah', message: "My mom wants to talk to you"},
+  {studentName: 'Eldon', message: "I will need help with today's assignment. Can I drop by after class?"},
+  {studentName: 'Ella', message: "Couldn't understand question 2 of quiz. Need a hint"},
+  {studentName: 'Enrico', message: "My mom wants to talk to you"},
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#EEEEEE',
     color: 'black',
     fontFamily: 'Muli',
+    cursor: 'pointer',
   },
   title: {
     color: 'black',
@@ -42,17 +43,13 @@ export default function Messages(props) {
   return (
     <div>
       {notes.map(note => (
-        <Card className={classes.card}>
-          <CardContent>
+        <Card className={classes.card} style={{ backgroundColor: '#ede7f6', paddingLeft: 15, paddingTop: 15, paddingBottom: 15}}>
             <Typography className={classes.title} color="textSecondary" gutterBottom align="left">
               {note.studentName}:
             </Typography>
-          </CardContent>
-          <CardActions>
           <Typography className={classes.title} color="textSecondary" gutterBottom align="left">
               {note.message}
             </Typography>
-          </CardActions>
         </Card>
       ))}
     </div>
