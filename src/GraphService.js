@@ -32,13 +32,13 @@ export async function getEvents(accessToken) {
   return events;
 }
 
-export async function getMembers(accessToken) {
-  const client = getAuthenticatedClient(accessToken);
+// export async function getMembers(accessToken) {
+//   const client = getAuthenticatedClient(accessToken);
 
-  const members = await client
-  .api('/groups')
-  .get();
+//   const members = await client
+//   .api('/groups/02bd9fd6-8f93-4758-87c3-1fb73740a315')
+//   .get();
 
-  // console.log(members);
-  return members;
-}
+//   // console.log(members);
+//   return members;
+// }
