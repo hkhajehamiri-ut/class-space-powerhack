@@ -1,3 +1,4 @@
+Web App project for PowerHack Hackathon for Microsoft's problem statement
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
